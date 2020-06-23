@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
+import ShadowView from 'react-native-shadow-view';
 
 import styles from '../../styles/style';
 import cardStyles from '../../styles/cardsStyle';
@@ -40,28 +41,28 @@ export default class Main extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.cardsContainer}>
-          <View style={cardStyles.deathsCard}>
+          <ShadowView style={cardStyles.deathsCard}>
             <Text style={cardStyles.deathsLabel}>Mortes Mundo:</Text>
             <Text style={cardStyles.deathsNumber}>{this.state.deathsW}</Text>
-          </View>
+          </ShadowView>
 
           <View style={cardStyles.midleCardsContainer}>
-            <View style={cardStyles.recoveredMediumCard}>
+            <ShadowView style={cardStyles.recoveredMediumCard}>
               <Text style={cardStyles.recoveredMediumLabel}>Recuperados Mundo:</Text>
 
               <Text style={cardStyles.recoveredNumber}>{this.state.recoveredW}</Text>
-            </View>
+            </ShadowView>
 
-            <View style={cardStyles.lethalityCard}>
+            <ShadowView style={cardStyles.lethalityCard}>
               <Text style={cardStyles.lethalityLabel}>Letalidade Mundo:</Text>
               <Text style={cardStyles.lethalityNumber}>{this.state.lethalityW}</Text>
-            </View>
+            </ShadowView>
           </View>
 
-          <View style={cardStyles.casesCard}>
+          <ShadowView style={cardStyles.casesCard}>
             <Text style={cardStyles.casesLabel}>Casos Mundo:</Text>
             <Text style={cardStyles.casesNumber}>{this.state.casesW}</Text>
-          </View>
+          </ShadowView>
         </View>
 
         <View style={styles.imageContainer}>

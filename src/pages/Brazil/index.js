@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler';
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
+import ShadowView from 'react-native-shadow-view';
 
 import styles from '../../styles/style';
 import cardStyles from '../../styles/cardsStyle';
@@ -39,27 +40,27 @@ export default class Main extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.cardsContainer}>
-          <View style={cardStyles.deathsCard}>
+          <ShadowView style={cardStyles.deathsCard}>
             <Text style={cardStyles.deathsLabel}>Mortes Brasil:</Text>
             <Text style={cardStyles.deathsNumber}>{this.state.deathsB}</Text>
-          </View>
+          </ShadowView>
 
           <View style={cardStyles.midleCardsContainer}>
-            <View style={cardStyles.casesMediumCard}>
+            <ShadowView style={cardStyles.casesMediumCard}>
               <Text style={cardStyles.casesMediumLabel}>Casos Brasil:</Text>
               <Text style={cardStyles.casesNumber}>{this.state.casesB}</Text>
-            </View>
+            </ShadowView>
 
-            <View style={cardStyles.lethalityCard}>
+            <ShadowView style={cardStyles.lethalityCard}>
               <Text style={cardStyles.lethalityLabel}>Letalidade Brasil:</Text>
               <Text style={cardStyles.lethalityNumber}>{this.state.lethalityB}</Text>
-            </View>
+            </ShadowView>
           </View>
 
-          <View style={cardStyles.recoveredCard}>
+          <ShadowView style={cardStyles.recoveredCard}>
             <Text style={cardStyles.recoveredLabel}>Recuperados Brasil:</Text>
             <Text style={cardStyles.recoveredNumber}>{this.state.recoveredB}</Text>
-          </View>
+          </ShadowView>
         </View>
 
         <View style={styles.imageContainer}>

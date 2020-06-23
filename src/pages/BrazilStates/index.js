@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView, TextInput, Image } from 'react-native';
+import ShadowView from 'react-native-shadow-view';
 
 import styles from '../../styles/style';
 import cardsStyle from '../../styles/cardsStyle';
@@ -23,7 +24,7 @@ import to from '../../../assets/img/regions/to.png';
 
 function StateCard(props) {
   return (
-    <View style={cardsStyle.stateCard}>
+    <ShadowView style={cardsStyle.stateCard}>
       <View style={{flexDirection: 'row', justifyContent: 'space-between', flex: 2}}>
         <Text style={cardsStyle.stateName}>{props.stateName}</Text>
         <Image source={props.img} style={props.styleI} />
@@ -31,10 +32,9 @@ function StateCard(props) {
       <View style={cardsStyle.stateNumbersContainer}>
         <Text style={cardsStyle.cases}>{props.cases}</Text>
         <Text style={cardsStyle.deaths}>{props.deaths}</Text>
-        {/* <Text style={cardsStyle.recovered}>{props.recovered}</Text> */}
         <Text style={cardsStyle.lethality}>{props.lethality}</Text>
       </View>
-    </View>
+    </ShadowView>
   );
 };
 
