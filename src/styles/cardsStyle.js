@@ -1,14 +1,22 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
 const cardStyles = StyleSheet.create({
   deathsCard: {
     justifyContent: 'space-between',
     height: 99,
+    width: Dimensions.get('window').width - 20,
     marginBottom: 15,
     borderRadius: 12,
+    backgroundColor: '#FFF',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.20,
+    shadowRadius: 1.41,
 
-    elevation: 2
   },
 
   deathsLabel: {
@@ -38,7 +46,14 @@ const cardStyles = StyleSheet.create({
     width: 215,
     marginBottom: 15,
     borderRadius: 12,
-    elevation: 2
+    backgroundColor: '#FFF',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.20,
+    shadowRadius: 1.41,
   },
 
   casesMediumLabel: {
@@ -61,7 +76,15 @@ const cardStyles = StyleSheet.create({
     justifyContent: 'space-between',
     borderRadius: 12,
     height: 99,
-    elevation: 2
+    width: Dimensions.get('window').width - 20,
+    backgroundColor: '#FFF',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.20,
+    shadowRadius: 1.41,
   },
 
   casesLabel: {
@@ -84,7 +107,14 @@ const cardStyles = StyleSheet.create({
     height: 87,
     width: 115,
     borderRadius: 12,
-    elevation: 2,
+    backgroundColor: '#FFF',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.20,
+    shadowRadius: 1.41,
   },
 
   lethalityLabel: {
@@ -107,7 +137,15 @@ const cardStyles = StyleSheet.create({
     justifyContent: 'space-between',
     borderRadius: 12,
     height: 99,
-    elevation: 2,
+    width: Dimensions.get('window').width - 20,
+    backgroundColor: '#FFF',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.20,
+    shadowRadius: 1.41,
   },
 
   recoveredLabel: {
@@ -131,7 +169,14 @@ const cardStyles = StyleSheet.create({
     width: 215,
     marginBottom: 15,
     borderRadius: 12,
-    elevation: 2
+    backgroundColor: '#FFF',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.20,
+    shadowRadius: 1.41,
   },
 
   recoveredMediumLabel: {
@@ -153,8 +198,18 @@ const cardStyles = StyleSheet.create({
   stateCard: {
     height: 99,
     borderRadius: 12,
-    elevation: 2,
     marginBottom: 15,
+    width: Dimensions.get('window').width - 20,
+    marginBottom: 15,
+    borderRadius: 12,
+    backgroundColor: '#FFF',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.20,
+    shadowRadius: 1.41,
   },
 
   stateName: {
