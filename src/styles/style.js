@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     width: 145,
     height: 108,
     alignSelf: 'center',
-    marginRight: 10
+    marginRight: 10,
   },
 
   imageLabel: {
@@ -57,6 +57,27 @@ const styles = StyleSheet.create({
   cardsContainer: {
     marginBottom: 50
   },
+
+  textInput: {
+    fontSize: 14,
+    color: '#00BFFF',
+    width: 220,
+    marginLeft: 15,
+    marginBottom: 25,
+    borderBottomWidth: 1,
+    borderBottomColor: '#00BFFF'
+  },
+
+  mapContainer: {
+    width: Dimensions.get('window').width,
+    alignSelf: 'center',
+    flex: 1,
+    borderRadius: 12
+  },
+
+  map: {
+    flex: 1,
+  }
 });
 
 export default styles;
