@@ -8,6 +8,20 @@ import cardsStyle from '../../styles/cardsStyle';
 import api from '../../services/numbersByRegionApi';
 
 // Images for each region
+import ac from '../../../assets/img/regions/ac.png';
+import al from '../../../assets/img/regions/al.png';
+import am from '../../../assets/img/regions/am.png';
+import ap from '../../../assets/img/regions/ap.png';
+import ba from '../../../assets/img/regions/ba.png';
+import ce from '../../../assets/img/regions/ce.png';
+import df from '../../../assets/img/regions/df.png';
+import es from '../../../assets/img/regions/es.png';
+import go from '../../../assets/img/regions/go.png';
+import ma from '../../../assets/img/regions/ma.png';
+import mg from '../../../assets/img/regions/mg.png';
+import ms from '../../../assets/img/regions/ms.png';
+import mt from '../../../assets/img/regions/mt.png';
+import pa from '../../../assets/img/regions/pa.png';
 import pb from '../../../assets/img/regions/pb.png';
 import pe from '../../../assets/img/regions/pe.png';
 import pi from '../../../assets/img/regions/pi.png';
@@ -114,23 +128,22 @@ export default class Main extends Component {
         {/* <View>
           <TextInput placeholder='Procure por um estado...' style={styles.textInput} />
         </View> */}
-
-        <StateCard stateName={this.state.acre[0]} cases={this.state.acre[1]} deaths={this.state.acre[2]} lethality={this.state.acre[3]} />
-        <StateCard stateName={this.state.alagoas[0]} cases={this.state.alagoas[1]} deaths={this.state.alagoas[2]} lethality={this.state.alagoas[3]} />
-        <StateCard stateName={this.state.amapa[0]} cases={this.state.amapa[1]} deaths={this.state.amapa[2]} lethality={this.state.amapa[3]} />
-        <StateCard stateName={this.state.amazonas[0]} cases={this.state.amazonas[1]} deaths={this.state.amazonas[2]} lethality={this.state.amazonas[3]} />
-        <StateCard stateName={this.state.bahia[0]} cases={this.state.bahia[1]} deaths={this.state.bahia[2]} lethality={this.state.bahia[3]} />
-        <StateCard stateName={this.state.ceara[0]} cases={this.state.ceara[1]} deaths={this.state.ceara[2]} lethality={this.state.ceara[3]} />
-        <StateCard stateName={this.state.df[0]} cases={this.state.df[1]} deaths={this.state.df[2]} lethality={this.state.df[3]} />
-        <StateCard stateName={this.state.es[0]} cases={this.state.es[1]} deaths={this.state.es[2]} lethality={this.state.es[3]} />
-        <StateCard stateName={this.state.goias[0]} cases={this.state.goias[1]} deaths={this.state.goias[2]} lethality={this.state.goias[3]} />
-        <StateCard stateName={this.state.maranhao[0]} cases={this.state.maranhao[1]} deaths={this.state.maranhao[2]} lethality={this.state.maranhao[3]} />
-        <StateCard stateName={this.state.mt[0]} cases={this.state.mt[1]} deaths={this.state.mt[2]} lethality={this.state.mt[3]} />
-        <StateCard stateName={this.state.ms[0]} cases={this.state.ms[1]} deaths={this.state.ms[2]} lethality={this.state.ms[3]} />
-        <StateCard stateName={this.state.mg[0]} cases={this.state.mg[1]} deaths={this.state.mg[2]} lethality={this.state.mg[3]} />
+        <StateCard img={ac} styleI={{width: 70, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.acre[0]} cases={this.state.acre[1]} deaths={this.state.acre[2]} lethality={this.state.acre[3]} />
+        <StateCard img={al} styleI={{width: 70, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.alagoas[0]} cases={this.state.alagoas[1]} deaths={this.state.alagoas[2]} lethality={this.state.alagoas[3]} />
+        <StateCard img={ap} styleI={{width: 35, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.amapa[0]} cases={this.state.amapa[1]} deaths={this.state.amapa[2]} lethality={this.state.amapa[3]} />
+        <StateCard img={am} styleI={{width: 45, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.amazonas[0]} cases={this.state.amazonas[1]} deaths={this.state.amazonas[2]} lethality={this.state.amazonas[3]} />
+        <StateCard img={ba} styleI={{width: 40, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.bahia[0]} cases={this.state.bahia[1]} deaths={this.state.bahia[2]} lethality={this.state.bahia[3]} />
+        <StateCard img={ce} styleI={{width: 30, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.ceara[0]} cases={this.state.ceara[1]} deaths={this.state.ceara[2]} lethality={this.state.ceara[3]} />
+        <StateCard img={df} styleI={{width: 70, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.df[0]} cases={this.state.df[1]} deaths={this.state.df[2]} lethality={this.state.df[3]} />
+        <StateCard img={es} styleI={{width: 25, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.es[0]} cases={this.state.es[1]} deaths={this.state.es[2]} lethality={this.state.es[3]} />
+        <StateCard img={go} styleI={{width: 40, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.goias[0]} cases={this.state.goias[1]} deaths={this.state.goias[2]} lethality={this.state.goias[3]} />
+        <StateCard img={ma} styleI={{width: 30, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.maranhao[0]} cases={this.state.maranhao[1]} deaths={this.state.maranhao[2]} lethality={this.state.maranhao[3]} />
+        <StateCard img={mt} styleI={{width: 40, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.mt[0]} cases={this.state.mt[1]} deaths={this.state.mt[2]} lethality={this.state.mt[3]} />
+        <StateCard img={ms} styleI={{width: 40, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.ms[0]} cases={this.state.ms[1]} deaths={this.state.ms[2]} lethality={this.state.ms[3]} />
+        <StateCard img={mg} styleI={{width: 50, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.mg[0]} cases={this.state.mg[1]} deaths={this.state.mg[2]} lethality={this.state.mg[3]} />
         <StateCard img={pr} styleI={{width: 55, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.parana[0]} cases={this.state.parana[1]} deaths={this.state.parana[2]} lethality={this.state.parana[3]} />
         <StateCard img={pb} styleI={{width: 70, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.paraiba[0]} cases={this.state.paraiba[1]} deaths={this.state.paraiba[2]} lethality={this.state.paraiba[3]} />
-        <StateCard stateName={this.state.para[0]} cases={this.state.para[1]} deaths={this.state.para[2]} lethality={this.state.para[3]} />
+        <StateCard img={pa} styleI={{width: 40, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.para[0]} cases={this.state.para[1]} deaths={this.state.para[2]} lethality={this.state.para[3]} />
         <StateCard img={pe} styleI={{width: 60, height: 20, marginTop: 20, marginRight: 30}} stateName={this.state.pernambuco[0]} cases={this.state.pernambuco[1]} deaths={this.state.pernambuco[2]} lethality={this.state.pernambuco[3]} />
         <StateCard img={pi} styleI={{width: 30, height: 50, marginTop: 20, marginRight: 30}} stateName={this.state.piaui[0]} cases={this.state.piaui[1]} deaths={this.state.piaui[2]} lethality={this.state.piaui[3]} />
         <StateCard img={rn} styleI={{width: 60, height: 35, marginTop: 20, marginRight: 30}} stateName={this.state.rn[0]} cases={this.state.rn[1]} deaths={this.state.rn[2]} lethality={this.state.rn[3]} />

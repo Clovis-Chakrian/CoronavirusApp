@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 
 const infoStyles = StyleSheet.create({
   tipCard: {
-    height: 170,
+    height: 190,
     borderBottomWidth: 1,
     borderBottomColor: '#C3C3C3',
     marginBottom: 10

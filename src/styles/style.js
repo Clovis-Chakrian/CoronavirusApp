@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     color: '#00BFFF',
     marginRight: 10,
     width: 107,
-    height: 60,
+    height: 80,
   },
 
   imageLabel2: {
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     color: '#00BFFF',
     marginRight: 10,
     width: 147,
-    height: 100,
+    height: 120,
   },
 
   cardsContainer: {
