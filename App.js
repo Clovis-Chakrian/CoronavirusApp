@@ -68,7 +68,6 @@ export default function App() {
         </View>
         <Tab.Navigator
           initialRouteName='Brasil'
-          lazy={false}
           tabBarOptions={{
             showLabel: false,
             activeBackgroundColor: '#DCDCDC',
