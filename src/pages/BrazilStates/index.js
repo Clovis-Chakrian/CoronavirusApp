@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView, TextInput, Image } from 'react-native';
 import ShadowView from 'react-native-shadow-view';
+import ShimmerPlaceHolder from 'react-native-shimmer-placeholder';
 
 import styles from '../../styles/style';
 import cardsStyle from '../../styles/cardsStyle';
@@ -35,11 +36,12 @@ import sc from '../../../assets/img/regions/sc.png';
 import se from '../../../assets/img/regions/se.png';
 import sp from '../../../assets/img/regions/sp.png';
 import to from '../../../assets/img/regions/to.png';
+import cardStyles from '../../styles/cardsStyle';
 
 function StateCard(props) {
   return (
     <ShadowView style={cardsStyle.stateCard}>
-      <View style={{flexDirection: 'row', justifyContent: 'space-between', flex: 2}}>
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between', flex: 2 }}>
         <Text style={cardsStyle.stateName}>{props.stateName}</Text>
         <Image source={props.img} style={props.styleI} />
       </View>
@@ -123,39 +125,72 @@ export default class Main extends Component {
   }
 
   render() {
-    return (
-      <ScrollView style={styles.container}>
-        {/* <View>
-          <TextInput placeholder='Procure por um estado...' style={styles.textInput} />
-        </View> */}
-        <StateCard img={ac} styleI={{width: 70, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.acre[0]} cases={this.state.acre[1]} deaths={this.state.acre[2]} lethality={this.state.acre[3]} />
-        <StateCard img={al} styleI={{width: 70, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.alagoas[0]} cases={this.state.alagoas[1]} deaths={this.state.alagoas[2]} lethality={this.state.alagoas[3]} />
-        <StateCard img={ap} styleI={{width: 35, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.amapa[0]} cases={this.state.amapa[1]} deaths={this.state.amapa[2]} lethality={this.state.amapa[3]} />
-        <StateCard img={am} styleI={{width: 45, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.amazonas[0]} cases={this.state.amazonas[1]} deaths={this.state.amazonas[2]} lethality={this.state.amazonas[3]} />
-        <StateCard img={ba} styleI={{width: 40, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.bahia[0]} cases={this.state.bahia[1]} deaths={this.state.bahia[2]} lethality={this.state.bahia[3]} />
-        <StateCard img={ce} styleI={{width: 30, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.ceara[0]} cases={this.state.ceara[1]} deaths={this.state.ceara[2]} lethality={this.state.ceara[3]} />
-        <StateCard img={df} styleI={{width: 70, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.df[0]} cases={this.state.df[1]} deaths={this.state.df[2]} lethality={this.state.df[3]} />
-        <StateCard img={es} styleI={{width: 25, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.es[0]} cases={this.state.es[1]} deaths={this.state.es[2]} lethality={this.state.es[3]} />
-        <StateCard img={go} styleI={{width: 40, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.goias[0]} cases={this.state.goias[1]} deaths={this.state.goias[2]} lethality={this.state.goias[3]} />
-        <StateCard img={ma} styleI={{width: 30, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.maranhao[0]} cases={this.state.maranhao[1]} deaths={this.state.maranhao[2]} lethality={this.state.maranhao[3]} />
-        <StateCard img={mt} styleI={{width: 40, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.mt[0]} cases={this.state.mt[1]} deaths={this.state.mt[2]} lethality={this.state.mt[3]} />
-        <StateCard img={ms} styleI={{width: 40, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.ms[0]} cases={this.state.ms[1]} deaths={this.state.ms[2]} lethality={this.state.ms[3]} />
-        <StateCard img={mg} styleI={{width: 50, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.mg[0]} cases={this.state.mg[1]} deaths={this.state.mg[2]} lethality={this.state.mg[3]} />
-        <StateCard img={pr} styleI={{width: 55, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.parana[0]} cases={this.state.parana[1]} deaths={this.state.parana[2]} lethality={this.state.parana[3]} />
-        <StateCard img={pb} styleI={{width: 70, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.paraiba[0]} cases={this.state.paraiba[1]} deaths={this.state.paraiba[2]} lethality={this.state.paraiba[3]} />
-        <StateCard img={pa} styleI={{width: 40, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.para[0]} cases={this.state.para[1]} deaths={this.state.para[2]} lethality={this.state.para[3]} />
-        <StateCard img={pe} styleI={{width: 60, height: 20, marginTop: 20, marginRight: 30}} stateName={this.state.pernambuco[0]} cases={this.state.pernambuco[1]} deaths={this.state.pernambuco[2]} lethality={this.state.pernambuco[3]} />
-        <StateCard img={pi} styleI={{width: 30, height: 50, marginTop: 20, marginRight: 30}} stateName={this.state.piaui[0]} cases={this.state.piaui[1]} deaths={this.state.piaui[2]} lethality={this.state.piaui[3]} />
-        <StateCard img={rn} styleI={{width: 60, height: 35, marginTop: 20, marginRight: 30}} stateName={this.state.rn[0]} cases={this.state.rn[1]} deaths={this.state.rn[2]} lethality={this.state.rn[3]} />
-        <StateCard img={rs} styleI={{width: 45, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.rs[0]} cases={this.state.rs[1]} deaths={this.state.rs[2]} lethality={this.state.rs[3]} />
-        <StateCard img={rj} styleI={{width: 40, height: 30, marginTop: 20, marginRight: 30}} stateName={this.state.rj[0]} cases={this.state.rj[1]} deaths={this.state.rj[2]} lethality={this.state.rj[3]} />
-        <StateCard img={ro} styleI={{width: 50, height: 42, marginTop: 20, marginRight: 30}} stateName={this.state.rondonia[0]} cases={this.state.rondonia[1]} deaths={this.state.rondonia[2]} lethality={this.state.rondonia[3]} />
-        <StateCard img={rr} styleI={{width: 40, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.roraima[0]} cases={this.state.roraima[1]} deaths={this.state.roraima[2]} lethality={this.state.roraima[3]} />
-        <StateCard img={sc} styleI={{width: 63, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.sc[0]} cases={this.state.sc[1]} deaths={this.state.sc[2]} lethality={this.state.sc[3]} />
-        <StateCard img={se} styleI={{width: 40, height: 45, marginTop: 20, marginRight: 30}} stateName={this.state.sergipe[0]} cases={this.state.sergipe[1]} deaths={this.state.sergipe[2]} lethality={this.state.sergipe[3]} />
-        <StateCard img={sp} styleI={{width: 60, height: 40, marginTop: 20, marginRight: 30}} stateName={this.state.sp[0]} cases={this.state.sp[1]} deaths={this.state.sp[2]} lethality={this.state.sp[3]} />
-        <StateCard img={to} styleI={{width: 30, height: 50, marginTop: 20, marginRight: 30}} stateName={this.state.tocantins[0]} cases={this.state.tocantins[1]} deaths={this.state.tocantins[2]} lethality={this.state.tocantins[3]} />
-      </ScrollView>
-    );
+    {
+      if (this.state.acre[1] == '...') {
+        return (
+          <ScrollView style={styles.container}>
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+            <ShimmerPlaceHolder autoRun={true} visible={false} style={cardStyles.stateCard} />
+          </ScrollView>
+        );
+      } else {
+        return (
+          <ScrollView style={styles.container}>
+            <StateCard img={ac} styleI={{ width: 70, height: 40, marginTop: 20, marginRight: 30 }} stateName={this.state.acre[0]} cases={this.state.acre[1]} deaths={this.state.acre[2]} lethality={this.state.acre[3]} />
+            <StateCard img={al} styleI={{ width: 70, height: 40, marginTop: 20, marginRight: 30 }} stateName={this.state.alagoas[0]} cases={this.state.alagoas[1]} deaths={this.state.alagoas[2]} lethality={this.state.alagoas[3]} />
+            <StateCard img={ap} styleI={{ width: 35, height: 40, marginTop: 20, marginRight: 30 }} stateName={this.state.amapa[0]} cases={this.state.amapa[1]} deaths={this.state.amapa[2]} lethality={this.state.amapa[3]} />
+            <StateCard img={am} styleI={{ width: 45, height: 40, marginTop: 20, marginRight: 30 }} stateName={this.state.amazonas[0]} cases={this.state.amazonas[1]} deaths={this.state.amazonas[2]} lethality={this.state.amazonas[3]} />
+            <StateCard img={ba} styleI={{ width: 40, height: 40, marginTop: 20, marginRight: 30 }} stateName={this.state.bahia[0]} cases={this.state.bahia[1]} deaths={this.state.bahia[2]} lethality={this.state.bahia[3]} />
+            <StateCard img={ce} styleI={{ width: 30, height: 40, marginTop: 20, marginRight: 30 }} stateName={this.state.ceara[0]} cases={this.state.ceara[1]} deaths={this.state.ceara[2]} lethality={this.state.ceara[3]} />
+            <StateCard img={df} styleI={{ width: 70, height: 40, marginTop: 20, marginRight: 30 }} stateName={this.state.df[0]} cases={this.state.df[1]} deaths={this.state.df[2]} lethality={this.state.df[3]} />
+            <StateCard img={es} styleI={{ width: 25, height: 40, marginTop: 20, marginRight: 30 }} stateName={this.state.es[0]} cases={this.state.es[1]} deaths={this.state.es[2]} lethality={this.state.es[3]} />
+            <StateCard img={go} styleI={{ width: 40, height: 40, marginTop: 20, marginRight: 30 }} stateName={this.state.goias[0]} cases={this.state.goias[1]} deaths={this.state.goias[2]} lethality={this.state.goias[3]} />
+            <StateCard img={ma} styleI={{ width: 30, height: 40, marginTop: 20, marginRight: 30 }} stateName={this.state.maranhao[0]} cases={this.state.maranhao[1]} deaths={this.state.maranhao[2]} lethality={this.state.maranhao[3]} />
+            <StateCard img={mt} styleI={{ width: 40, height: 40, marginTop: 20, marginRight: 30 }} stateName={this.state.mt[0]} cases={this.state.mt[1]} deaths={this.state.mt[2]} lethality={this.state.mt[3]} />
+            <StateCard img={ms} styleI={{ width: 40, height: 40, marginTop: 20, marginRight: 30 }} stateName={this.state.ms[0]} cases={this.state.ms[1]} deaths={this.state.ms[2]} lethality={this.state.ms[3]} />
+            <StateCard img={mg} styleI={{ width: 50, height: 40, marginTop: 20, marginRight: 30 }} stateName={this.state.mg[0]} cases={this.state.mg[1]} deaths={this.state.mg[2]} lethality={this.state.mg[3]} />
+            <StateCard img={pr} styleI={{ width: 55, height: 40, marginTop: 20, marginRight: 30 }} stateName={this.state.parana[0]} cases={this.state.parana[1]} deaths={this.state.parana[2]} lethality={this.state.parana[3]} />
+            <StateCard img={pb} styleI={{ width: 70, height: 40, marginTop: 20, marginRight: 30 }} stateName={this.state.paraiba[0]} cases={this.state.paraiba[1]} deaths={this.state.paraiba[2]} lethality={this.state.paraiba[3]} />
+            <StateCard img={pa} styleI={{ width: 40, height: 40, marginTop: 20, marginRight: 30 }} stateName={this.state.para[0]} cases={this.state.para[1]} deaths={this.state.para[2]} lethality={this.state.para[3]} />
+            <StateCard img={pe} styleI={{ width: 60, height: 20, marginTop: 20, marginRight: 30 }} stateName={this.state.pernambuco[0]} cases={this.state.pernambuco[1]} deaths={this.state.pernambuco[2]} lethality={this.state.pernambuco[3]} />
+            <StateCard img={pi} styleI={{ width: 30, height: 50, marginTop: 20, marginRight: 30 }} stateName={this.state.piaui[0]} cases={this.state.piaui[1]} deaths={this.state.piaui[2]} lethality={this.state.piaui[3]} />
+            <StateCard img={rn} styleI={{ width: 60, height: 35, marginTop: 20, marginRight: 30 }} stateName={this.state.rn[0]} cases={this.state.rn[1]} deaths={this.state.rn[2]} lethality={this.state.rn[3]} />
+            <StateCard img={rs} styleI={{ width: 45, height: 40, marginTop: 20, marginRight: 30 }} stateName={this.state.rs[0]} cases={this.state.rs[1]} deaths={this.state.rs[2]} lethality={this.state.rs[3]} />
+            <StateCard img={rj} styleI={{ width: 40, height: 30, marginTop: 20, marginRight: 30 }} stateName={this.state.rj[0]} cases={this.state.rj[1]} deaths={this.state.rj[2]} lethality={this.state.rj[3]} />
+            <StateCard img={ro} styleI={{ width: 50, height: 42, marginTop: 20, marginRight: 30 }} stateName={this.state.rondonia[0]} cases={this.state.rondonia[1]} deaths={this.state.rondonia[2]} lethality={this.state.rondonia[3]} />
+            <StateCard img={rr} styleI={{ width: 40, height: 40, marginTop: 20, marginRight: 30 }} stateName={this.state.roraima[0]} cases={this.state.roraima[1]} deaths={this.state.roraima[2]} lethality={this.state.roraima[3]} />
+            <StateCard img={sc} styleI={{ width: 63, height: 40, marginTop: 20, marginRight: 30 }} stateName={this.state.sc[0]} cases={this.state.sc[1]} deaths={this.state.sc[2]} lethality={this.state.sc[3]} />
+            <StateCard img={se} styleI={{ width: 40, height: 45, marginTop: 20, marginRight: 30 }} stateName={this.state.sergipe[0]} cases={this.state.sergipe[1]} deaths={this.state.sergipe[2]} lethality={this.state.sergipe[3]} />
+            <StateCard img={sp} styleI={{ width: 60, height: 40, marginTop: 20, marginRight: 30 }} stateName={this.state.sp[0]} cases={this.state.sp[1]} deaths={this.state.sp[2]} lethality={this.state.sp[3]} />
+            <StateCard img={to} styleI={{ width: 30, height: 50, marginTop: 20, marginRight: 30 }} stateName={this.state.tocantins[0]} cases={this.state.tocantins[1]} deaths={this.state.tocantins[2]} lethality={this.state.tocantins[3]} />
+          </ScrollView>
+        );
+      }
+    }
   };
 };

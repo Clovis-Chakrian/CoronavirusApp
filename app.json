@@ -6,11 +6,11 @@
       "ios",
       "android"
     ],
-    "version": "1.5.0",
+    "version": "1.5.4",
     "orientation": "portrait",
     "icon": "./assets/icone2.png",
     "splash": {
-      "image": "./assets/icon.png",
+      "image": "./assets/icone2.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -21,7 +21,16 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false
+    },
+    "android": {
+      "package": "com.clovischakrian.coronavirusapp",
+      "versionCode": 1,
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyBUzF9SV9b-QoSy5cZMLaRbZ_i4vfpvdNo"
+        }
+      }
     }
   }
 }

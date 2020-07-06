@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Image, Alert } from 'react-native';
+import { View, Alert } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 
@@ -93,6 +93,8 @@ const Hospitals = () => {
     <View style={styles.mapContainer}>
       {initialPosition[0] !== 0 && (
         <MapView
+          showsUserLocation
+          followsUserLocation
           customMapStyle={mapStyle}
           style={styles.map}
           maxZoomLevel={16}
@@ -105,11 +107,6 @@ const Hospitals = () => {
           }}
           rotateEnabled={false}
         >
-          <Marker coordinate={{
-            latitude: initialPosition[0],
-            longitude: initialPosition[1],
-          }}>
-          </Marker>
         </MapView>
       )}
     </View>
